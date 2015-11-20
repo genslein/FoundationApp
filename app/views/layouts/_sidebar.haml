@@ -1,0 +1,11 @@
+-if current_user || Rails.env.development?
+  .sidebar
+    %h5.row.sidebar-title External Links
+    -@external_links.each do |link|
+      .row=link_to link[:name], link[:url], :target => "_blank"
+    %h5.row.sidebar-title Applications
+    -@application_links.each do |link|
+      .row=link_to link[:name], main_app.app_path(id: link[:id])
+    %h5.row.sidebar-title Help
+    .row=link_to 'GRRP Chart', image_path('platform-on-call-flow.png')
+    .row=link_to 'Zuul Chart', image_path('zuul-on-call-flow.png')
