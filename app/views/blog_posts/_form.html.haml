@@ -6,18 +6,21 @@
         - @blog_post.errors.full_messages.each do |msg|
           %li= msg
 
-  .row
+  .row.collapsed
     .small-3.columns
-    = f.label :title
-    = f.text_area :title
-  .row
+    = f.label :title, class: 'right inline'
     .small-9.columns
-    = f.label :body
-    = f.text_area :body
-  .row
+    = f.text_area :title
+  .row.collapsed
     .small-3.columns
-    = f.label :time_posted
+    = f.label :body, class: 'right inline'
+    .small-9.columns
+    = f.text_area :body
+  .row.collapsed
+    .small-3.columns
+    = f.label :time_posted, class: 'right inline'
+    .small-9.columns
     = f.datetime_select :time_posted
-  .row
+  .row.collapse
     .small-9.small-offset-3.columns
-    = f.submit 'Save'
+    = f.submit 'Save', class: 'button radius'
