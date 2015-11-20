@@ -6,30 +6,22 @@
           =link_to 'Foundation Sample App', '/'
     %section.top-bar-section
       %ul.left
-        %li=link_to 'Jumpcloud', jumpcloud_systems_path
+        %li=link_to 'Jumpcloud', nil
       %ul.left
         %li.has-dropdown
-          =link_to 'Opsworks', main_app.opsworks_path
+          =link_to 'Opsworks', nil
           %ul.dropdown
             %li
-              =link_to 'Staging Environments', main_app.stagings_dashboard_path
-            %li
-              =link_to 'Custom Stack Settings', main_app.custom_stack_settings_path
-            %li
-              =link_to 'Deploy', main_app.deploy_view_path
-            %li
-              =link_to 'Rotate SSH Deploy Keys', main_app.ssh_deploy_key_rotate_path
-            %li
-              =link_to 'Bastion SG Swapper', main_app.bastion_security_group_swapper_path
+              =link_to 'Staging Environments', nil
         %li.has-dropdown
           =link_to 'Monitoring', '#'
           %ul.dropdown
             %li
-              =link_to 'New Relic Errors', main_app.newrelic_errors_path
+              =link_to 'New Relic Errors', nil
         %li.has-dropdown
           =link_to 'Zuul', '#'
           %ul.dropdown
             %li
-              =link_to 'Run Recipes', main_app.zuul_run_recipes_path
+              =link_to 'Run Recipes', nil
             %li
-              =link_to 'Modify Routes', main_app.zuul_list_route_settings_path
+              =link_to 'Modify Routes', nil
