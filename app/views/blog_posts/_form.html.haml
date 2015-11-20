@@ -6,17 +6,17 @@
         - @blog_post.errors.full_messages.each do |msg|
           %li= msg
 
-  .row.collapsed
+  .row.collapse
     .small-3.columns
     = f.label :title, class: 'right inline'
     .small-9.columns
     = f.text_area :title
-  .row.collapsed
+  .row.collapse
     .small-3.columns
-    = f.label :body, class: 'right inline'
+    = f.label :body, class: 'right inline', title: "Content to Publish", data: {tooltip: true}
     .small-9.columns
     = f.text_area :body
-  .row.collapsed
+  .row.collapse
     .small-3.columns
     = f.label :time_posted, class: 'right inline'
     .small-9.columns
