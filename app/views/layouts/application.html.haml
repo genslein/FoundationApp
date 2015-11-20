@@ -13,6 +13,8 @@
     = csrf_meta_tag
 
   %body
-
-    = yield
-
+    = render 'layouts/header'
+    .row
+      .medium-3.large-2.columns=render 'layouts/sidebar'
+    = javascript_include_tag "application"
+    = yield :javascript
