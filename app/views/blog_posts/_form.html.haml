@@ -6,14 +6,18 @@
         - @blog_post.errors.full_messages.each do |msg|
           %li= msg
 
-  .field
+  .row
+    .small-3.columns
     = f.label :title
     = f.text_area :title
-  .field
+  .row
+    .small-9.columns
     = f.label :body
     = f.text_area :body
-  .field
+  .row
+    .small-3.columns
     = f.label :time_posted
     = f.datetime_select :time_posted
-  .actions
+  .row
+    .small-9.small-offset-3.columns
     = f.submit 'Save'
