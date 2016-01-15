@@ -14,9 +14,7 @@
 
   %body
     = render 'layouts/header'
-    .row
-      .medium-3.large-2.columns=render 'layouts/sidebar'
-      .small-12.medium-9.large-10.columns
-        = content_for?(:content) ? yield(:content) : yield
+    .large-2.large-left.columns=render 'layouts/sidebar'
+    .medium-9.medium-left.large-10.columns= content_for?(:content) ? yield(:content) : yield
     = javascript_include_tag "application"
     = yield :javascript
