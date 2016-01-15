@@ -1,37 +1,51 @@
-%ul.vertical.menu{"data-accordion-menu" => ""}
-  %li
-    %a{:href => "#"} Item 1
-    %ul.menu.vertical.nested.is-active
-      %li
-        %a{:href => "#"} Item 1A
-        %ul.menu.vertical.nested
-          %li
-            %a{:href => "#"} Item 1Ai
-          %li
-            %a{:href => "#"} Item 1Aii
-          %li
-            %a{:href => "#"} Item 1Aiii
-      %li
-        %a{:href => "#"} Item 1B
-      %li
-        %a{:href => "#"} Item 1C
-  %li
-    %a{:href => "#"} Item 2
-    %ul.menu.vertical.nested
-      %li
-        %a{:href => "#"} Item 2A
-      %li
-        %a{:href => "#"} Item 2B
-  %li
-    %a{:href => "#"} Item 3
+.title-bar{"data-hide-for" => "all", "data-responsive-toggle" => "side-menu"}
+  %button.menu-icon{"data-toggle" => "", :type => "button"}
+  .title-bar-title External Links
 
--#.sidebar
--#  %h5.row.sidebar-title External Links
--#  -@external_links.each do |link|
--#    .row=link_to link[:name], link[:url], :target => "_blank"
--#  %h5.row.sidebar-title Applications
--#  -@application_links.each do |link|
--#    .row=link_to link[:name], link[:url], :target => "_blank" #main_app.app_path(id: link[:id])
--#  %h5.row.sidebar-title Help
--#  .row=link_to 'GRRP Chart', image_path('platform-on-call-flow.png')
--#  .row=link_to 'Zuul Chart', image_path('zuul-on-call-flow.png')
+-#%ul#side-menu.vertical.menu{"data-responsive-menu" => "drilldown medium-dropdown"}
+-#  %li.has-submenu
+-#    %a{:href => "#"} Example SubMenus
+-#    %ul#m2.vertical.submenu.menu{"data-submenu" => ""}
+-#      %li.has-submenu
+-#        %a{:href => "#"} Item 1A
+-#        %ul#m3.vertical.submenu.menu{"data-submenu" => ""}
+-#          %li
+-#            %a{:href => "#"} Item 1A
+-#          %li
+-#            %a{:href => "#"} Item 1B
+-#      %li
+-#        %a{:href => "#"} Item 1B
+-#  %li.has-submenu
+-#    %a{:href => "#"} Applications
+-#    %ul.vertical.submenu.menu{"data-submenu" => ""}
+-#    -@external_links.each do |link|
+-#      .row=link_to link[:name], link[:url], :target => "_blank"
+-#      %li
+-#        %a{:href => "#"} Item 2A
+-#      %li
+-#        %a{:href => "#"} Item 2B
+-#  %li.has-submenu
+-#    %a{:href => "#"} Item 3
+-#    %ul.vertical.submenu.menu{"data-submenu" => ""}
+-#      %li
+-#        %a{:href => "#"} Item 3A
+-#      %li
+-#        %a{:href => "#"} Item 3B
+
+#side-menu.sidebar
+  %ul.dropdown.menu.vertical{"data-dropdown-menu" => ""}
+    %li.has-submenu
+      %a{:href => "#"} Personal Links
+      %ul.submenu.menu.vertical{"data-submenu" => ""}
+        -@external_links.each do |link|
+          %li=link_to link[:name], link[:url], :target => "_blank"
+    %li.has-submenu
+      %a{:href => "#"} Applications
+      %ul.submenu.menu.vertical{"data-submenu" => ""}
+        -@application_links.each do |link|
+          %li=link_to link[:name], link[:url], :target => "_blank" #main_app.app_path(id: link[:id])
+    %li.has-submenu
+      %a{:href => "#"} Help Links
+      %ul.submenu.menu.vertical{"data-submenu" => ""}
+        %li=link_to 'GRRP Chart', image_path('platform-on-call-flow.png')
+        %li=link_to 'Zuul Chart', image_path('zuul-on-call-flow.png')
